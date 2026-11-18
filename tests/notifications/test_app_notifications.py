@@ -51,3 +51,22 @@ async def test_app_clearing_notifications() -> None:
         assert len(pilot.app._notifications) == 100
         pilot.app.clear_notifications()
         assert len(pilot.app._notifications) == 0
+
+
+async def test_app_clearing_notifications_removes_holders() -> None:
+    """Clearing notifications should remove the empty toast holders too."""
+    from textual.widgets._toast import Toast, ToastHolder, ToastRack
+
+    async with NotificationApp().run_test(notifications=True) as pilot:
+        for _ in range(3):
+            pilot.app.notify("test", timeout=120)
+        await pilot.pause()
+
+        rack = pilot.app.screen.query_one(ToastRack)
+        assert len(rack.query(ToastHolder)) == 3
+
+        pilot.app.clear_notifications()
+        await pilot.pause()
+
+        assert not rack.query(Toast)
+        assert not rack.query(ToastHolder)

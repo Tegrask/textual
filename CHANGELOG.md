@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## Unreleased
+
+### Fixed
+
+- Fixed empty `ToastHolder` containers building up in the `ToastRack` after `App.clear_notifications()`.
+
 ## [8.2.8] - 2026-06-30
 
 ### Fixed
@@ -17,7 +23,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - super+backspace is now an alias for ctrl+u in Input and TextArea https://github.com/Textualize/textual/pull/6594
 - alt+backspace (option+backspace on Mac) has the same effect as ctrl+backspace in Input and TextArea https://github.com/Textualize/textual/pull/6593
 
-## [8.2.7] - 2026-05-19 
+## [8.2.7] - 2026-05-19
 
 ### Added
 
@@ -34,7 +40,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 
-- Fixed text opacity with ANSI themes creating RGB colors.  https://github.com/Textualize/textual/pull/6546
+- Fixed text opacity with ANSI themes creating RGB colors. https://github.com/Textualize/textual/pull/6546
 
 ## [8.2.6] - 2026-05-13
 
@@ -68,7 +74,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 - Fixed anchor released when scrolling down with the trackpad https://github.com/Textualize/textual/pull/6503
 
-## [8.2.3] - 2026-04-05 
+## [8.2.3] - 2026-04-05
 
 ### Changed
 
@@ -88,7 +94,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [8.2.0] - 2026-03-27
 
-### Added 
+### Added
 
 - Auto-scrolling on select https://github.com/Textualize/textual/pull/6440
 - Selecting over containers https://github.com/Textualize/textual/pull/6440
@@ -125,7 +131,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 
-- `DirectoryTree` runs more operations in a thread to avoid micro-freezes 
+- `DirectoryTree` runs more operations in a thread to avoid micro-freezes
 
 ### Changes
 
@@ -145,7 +151,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - It is no longer a NOOP and warning to dismiss a non-active screen. The dismiss will still work, but the screen may not update if the current mode is not active. https://github.com/Textualize/textual/pull/6362
 - Added 50ms delay when switching screens to allow state to udpate and prevent janky flash of old content https://github.com/Textualize/textual/pull/6362
 - Breaking change: Changed `Select.BLANK` to `Select.NULL` to avoid clash with newer `Widget.BLANK` Classvar https://github.com/Textualize/textual/pull/6374
-  
+
 ## [7.5.0] - 2026-01-30
 
 ### Changed
@@ -281,11 +287,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Added `Content.fold` https://github.com/Textualize/textual/pull/6238
 - Added `strip_control_codes` to Content constructors https://github.com/Textualize/textual/pull/6238
 
-### Changed 
+### Changed
 
 - Added `Screen.get_loading_widget` which deferes to `App.get_loading_widget` https://github.com/Textualize/textual/pull/6228
 
-### Fixed 
+### Fixed
 
 - Fixed `anchor` with `ScrollView` widgets https://github.com/Textualize/textual/pull/6228
 
@@ -460,7 +466,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `textual.compose` is now public https://github.com/Textualize/textual/pull/5999
 
 ## [5.0.1] - 2025-07-25
-
 
 ### Fixed
 
@@ -701,7 +706,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Added `Content.pad` method https://github.com/Textualize/textual/pull/5657
 - Added `Style.has_transparent_foreground` property https://github.com/Textualize/textual/pull/5657
 
-
 ## [2.1.2] - 2025-02-26
 
 ### Fixed
@@ -828,7 +832,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Breaking change: Change default quit key to `ctrl+q` https://github.com/Textualize/textual/pull/5352
 - The command palette will now select the top item automatically https://github.com/Textualize/textual/pull/5361
 - `ctrl+shift+k` now deletes the current line in `TextArea`, and `ctrl+x` will cut
-the selection if there is one, otherwise it will cut the current line https://github.com/Textualize/textual/pull/5374
+  the selection if there is one, otherwise it will cut the current line https://github.com/Textualize/textual/pull/5374
 - Implemented a better matching algorithm for the command palette https://github.com/Textualize/textual/pull/5365
 
 ### Fixed
@@ -896,7 +900,6 @@ the selection if there is one, otherwise it will cut the current line https://gi
 - `ListView.pop` now returns `AwaitComplete` rather than `AwaitRemove` https://github.com/Textualize/textual/pull/5135
 - `ListView.remove_items` now returns `AwaitComplete` rather than `AwaitRemove` https://github.com/Textualize/textual/pull/5135
 
-
 ## [0.87.1] - 2024-11-24
 
 ### Fixed
@@ -928,14 +931,12 @@ the selection if there is one, otherwise it will cut the current line https://gi
 
 - Fixed a glitch with the scrollbar that occurs when you hold `a` to add stopwatches in the tutorial app https://github.com/Textualize/textual/pull/5257
 
-
 ## [0.86.2] - 2024-11-18
 
 ### Fixed
 
 - Fixed visibility glitch for widgets with an offset https://github.com/Textualize/textual/pull/5253
 - Fixed theme variables being unavailable in code until refresh_css was called https://github.com/Textualize/textual/pull/5254
-
 
 ## [0.86.1] - 2024-11-16
 
@@ -1017,7 +1018,7 @@ the selection if there is one, otherwise it will cut the current line https://gi
 - Added `immediate` parameter to scroll methods https://github.com/Textualize/textual/pull/5164
 - Added `textual._loop.loop_from_index` https://github.com/Textualize/textual/pull/5164
 - Added `min_color` and `max_color` to Sparklines constructor, which take precedence over CSS https://github.com/Textualize/textual/pull/5174
-- Added new demo `python -m textual`, not *quite* finished but better than the old one https://github.com/Textualize/textual/pull/5174
+- Added new demo `python -m textual`, not _quite_ finished but better than the old one https://github.com/Textualize/textual/pull/5174
 - Added `Screen.can_view_partial` and `Widget.can_view_partial` https://github.com/Textualize/textual/pull/5174
 - Added `App.is_web` property to indicate if the app is running via a web browser https://github.com/Textualize/textual/pull/5128
 - `Enter` and `Leave` events can now be used with the `on` decorator https://github.com/Textualize/textual/pull/5159
@@ -1117,7 +1118,6 @@ the selection if there is one, otherwise it will cut the current line https://gi
 - Added additional bindings to Tree widget https://github.com/Textualize/textual/pull/5023
 - Added `Tree.center_scroll` https://github.com/Textualize/textual/pull/5023
 - Added `Tree.unselect` https://github.com/Textualize/textual/pull/5023
-
 
 ### Changed
 
@@ -1230,7 +1230,6 @@ the selection if there is one, otherwise it will cut the current line https://gi
 
 - Fixed issue with Enter events causing unresponsive UI https://github.com/Textualize/textual/pull/4833
 
-
 ## [0.75.0] - 2024-08-01
 
 ### Added
@@ -1296,10 +1295,9 @@ the selection if there is one, otherwise it will cut the current line https://gi
 
 - "Discover" hits in the command palette are no longer sorted alphabetically https://github.com/Textualize/textual/pull/4720
 - `TreeNodeSelected` messages are now posted before `TreeNodeExpanded` messages
-when an expandable node is selected https://github.com/Textualize/textual/pull/4753
+  when an expandable node is selected https://github.com/Textualize/textual/pull/4753
 - `Markdown.LinkClicked.href` is now automatically unquoted https://github.com/Textualize/textual/pull/4749
 - The mouse cursor hover effect of `Tree` and `DirectoryTree` will no longer linger after the mouse leaves the widget https://github.com/Textualize/textual/pull/4766
-
 
 ## [0.72.0] - 2024-07-09
 
@@ -1528,7 +1526,6 @@ when an expandable node is selected https://github.com/Textualize/textual/pull/4
 - Breaking change: Actions (as used in bindings) will no longer check the app if they are unhandled. This was undocumented anyway, and not that useful. https://github.com/Textualize/textual/pull/4516
 - Breaking change: Renamed `App.namespace_bindings` to `active_bindings`
 
-
 ## [0.60.1] - 2024-05-15
 
 ### Fixed
@@ -1571,7 +1568,6 @@ when an expandable node is selected https://github.com/Textualize/textual/pull/4
 - Fixed intermittent issue with scrolling to focus https://github.com/Textualize/textual/commit/567caf8acb196260adf6a0a6250e3ff5093056d0
 - Fixed issue with scrolling to center https://github.com/Textualize/textual/pull/4469
 
-
 ## [0.58.0] - 2024-04-25
 
 ### Fixed
@@ -1595,7 +1591,6 @@ when an expandable node is selected https://github.com/Textualize/textual/pull/4
 ### Added
 
 - Added `Offset.clamp` and `Size.clamp_offset` https://github.com/Textualize/textual/pull/4435
-
 
 ## [0.57.0] - 2024-04-19
 
@@ -1651,7 +1646,6 @@ when an expandable node is selected https://github.com/Textualize/textual/pull/4
 ### Changed
 
 - self.prevent can be used in a widget constructor to prevent messages on mount https://github.com/Textualize/textual/pull/4392
-
 
 ## [0.55.1] - 2024-04-2
 
@@ -1840,7 +1834,6 @@ when an expandable node is selected https://github.com/Textualize/textual/pull/4
 - Added Worker.cancelled_event https://github.com/Textualize/textual/pull/4075
 - `Tree` (and `DirectoryTree`) grew an attribute `lock` that can be used for synchronization across coroutines https://github.com/Textualize/textual/issues/4056
 
-
 ## [0.48.2] - 2024-02-02
 
 ### Fixed
@@ -1889,7 +1882,6 @@ when an expandable node is selected https://github.com/Textualize/textual/pull/4
 - Added `App.suspend` https://github.com/Textualize/textual/pull/4064
 - Added `App.action_suspend_process` https://github.com/Textualize/textual/pull/4064
 
-
 ### Fixed
 
 - Parameter `animate` from `DataTable.move_cursor` was being ignored https://github.com/Textualize/textual/issues/3840
@@ -1906,7 +1898,6 @@ when an expandable node is selected https://github.com/Textualize/textual/pull/4
 - Fixed CSS watcher crash if file becomes unreadable (even temporarily) https://github.com/Textualize/textual/pull/4079
 - Fixed display of keys when used in conjunction with other keys https://github.com/Textualize/textual/pull/3050
 - Fixed double detection of <kbd>Escape</kbd> on Windows https://github.com/Textualize/textual/issues/4038
-
 
 ## [0.47.1] - 2024-01-05
 
@@ -1992,9 +1983,9 @@ when an expandable node is selected https://github.com/Textualize/textual/pull/4
 
 - Breaking change: Dropped 3.7 support https://github.com/Textualize/textual/pull/3766
 - Breaking changes https://github.com/Textualize/textual/issues/1530
- - `link-hover-background` renamed to `link-background-hover`
- - `link-hover-color` renamed to `link-color-hover`
- - `link-hover-style` renamed to `link-style-hover`
+- `link-hover-background` renamed to `link-background-hover`
+- `link-hover-color` renamed to `link-color-hover`
+- `link-hover-style` renamed to `link-style-hover`
 - `Tree` now forces a scroll when `scroll_to_node` is called https://github.com/Textualize/textual/pull/3786
 - Brought rxvt's use of shift-numpad keys in line with most other terminals https://github.com/Textualize/textual/pull/3769
 
@@ -2376,7 +2367,6 @@ when an expandable node is selected https://github.com/Textualize/textual/pull/4
 - Fixed CancelledError issue with timer https://github.com/Textualize/textual/issues/2854
 - Fixed Toggle Buttons issue with not being clickable/hoverable https://github.com/Textualize/textual/pull/2930
 
-
 ## [0.29.0] - 2023-07-03
 
 ### Changed
@@ -2419,7 +2409,6 @@ when an expandable node is selected https://github.com/Textualize/textual/pull/4
 ### Changed
 
 - Tooltips are now inherited, so will work with compound widgets
-
 
 ## [0.28.0] - 2023-06-19
 
@@ -2676,7 +2665,6 @@ when an expandable node is selected https://github.com/Textualize/textual/pull/4
 
 - All `textual.containers` are now `1fr` in relevant dimensions by default https://github.com/Textualize/textual/pull/2386
 
-
 ## [0.21.0] - 2023-04-26
 
 ### Changed
@@ -2745,9 +2733,8 @@ when an expandable node is selected https://github.com/Textualize/textual/pull/4
 
 ### Fixed
 
-- Fix viewport units using wrong viewport size  https://github.com/Textualize/textual/pull/2247
+- Fix viewport units using wrong viewport size https://github.com/Textualize/textual/pull/2247
 - Fixed layout not clearing arrangement cache https://github.com/Textualize/textual/pull/2249
-
 
 ## [0.19.0] - 2023-04-07
 
@@ -2852,6 +2839,7 @@ when an expandable node is selected https://github.com/Textualize/textual/pull/4
 ## [0.16.0] - 2023-03-22
 
 ### Added
+
 - Added `parser_factory` argument to `Markdown` and `MarkdownViewer` constructors https://github.com/Textualize/textual/pull/2075
 - Added `HorizontalScroll` https://github.com/Textualize/textual/issues/1957
 - Added `Center` https://github.com/Textualize/textual/issues/1957
@@ -3032,7 +3020,7 @@ when an expandable node is selected https://github.com/Textualize/textual/pull/4
 - Added `DataTable.get_cell` to retrieve a cell by column/row keys https://github.com/Textualize/textual/pull/1638
 - Added `DataTable.get_cell_at` to retrieve a cell by coordinate https://github.com/Textualize/textual/pull/1638
 - Added `DataTable.update_cell` to update a cell by column/row keys https://github.com/Textualize/textual/pull/1638
-- Added `DataTable.update_cell_at` to update a cell at a coordinate  https://github.com/Textualize/textual/pull/1638
+- Added `DataTable.update_cell_at` to update a cell at a coordinate https://github.com/Textualize/textual/pull/1638
 - Added `DataTable.ordered_rows` property to retrieve `Row`s as they're currently ordered https://github.com/Textualize/textual/pull/1638
 - Added `DataTable.ordered_columns` property to retrieve `Column`s as they're currently ordered https://github.com/Textualize/textual/pull/1638
 - Added `DataTable.coordinate_to_cell_key` to find the key for the cell at a coordinate https://github.com/Textualize/textual/pull/1638
@@ -3045,7 +3033,7 @@ when an expandable node is selected https://github.com/Textualize/textual/pull/4
 - Added `DataTable.get_column` to retrieve the values from a column by key https://github.com/Textualize/textual/pull/1786
 - Added `DataTable.get_column_at` to retrieve the values from a column by index https://github.com/Textualize/textual/pull/1786
 - Added `DataTable.HeaderSelected` which is posted when header label clicked https://github.com/Textualize/textual/pull/1788
-- Added `DOMNode.watch` and `DOMNode.is_attached` methods  https://github.com/Textualize/textual/pull/1750
+- Added `DOMNode.watch` and `DOMNode.is_attached` methods https://github.com/Textualize/textual/pull/1750
 - Added `DOMNode.css_tree` which is a renderable that shows the DOM and CSS https://github.com/Textualize/textual/pull/1778
 - Added `DOMNode.children_view` which is a view on to a nodes children list, use for querying https://github.com/Textualize/textual/pull/1778
 - Added `Markdown` and `MarkdownViewer` widgets.
@@ -3080,7 +3068,7 @@ when an expandable node is selected https://github.com/Textualize/textual/pull/4
 
 ### Fixed
 
-- Fixed stuck screen  https://github.com/Textualize/textual/issues/1632
+- Fixed stuck screen https://github.com/Textualize/textual/issues/1632
 - Fixed programmatic style changes not refreshing children layouts when parent widget did not change size https://github.com/Textualize/textual/issues/1607
 - Fixed relative units in `grid-rows` and `grid-columns` being computed with respect to the wrong dimension https://github.com/Textualize/textual/issues/1406
 - Fixed bug with animations that were triggered back to back, where the second one wouldn't start https://github.com/Textualize/textual/issues/1372
@@ -3111,7 +3099,6 @@ when an expandable node is selected https://github.com/Textualize/textual/pull/4
 ### Changed
 
 - The default filename for screenshots uses a datetime format similar to ISO8601, but with reserved characters replaced by underscores https://github.com/Textualize/textual/pull/1518
-
 
 ## [0.10.0] - 2023-01-19
 
@@ -3194,7 +3181,7 @@ when an expandable node is selected https://github.com/Textualize/textual/pull/4
 
 - Fixed issues with nested auto dimensions https://github.com/Textualize/textual/issues/1402
 - Fixed watch method incorrectly running on first set when value hasn't changed and init=False https://github.com/Textualize/textual/pull/1367
-- `App.dark` can now be set from `App.on_load` without an error being raised  https://github.com/Textualize/textual/issues/1369
+- `App.dark` can now be set from `App.on_load` without an error being raised https://github.com/Textualize/textual/issues/1369
 - Fixed setting `visibility` changes needing a `refresh` https://github.com/Textualize/textual/issues/1355
 
 ### Added
@@ -3229,7 +3216,6 @@ when an expandable node is selected https://github.com/Textualize/textual/pull/4
 
 - Fixed validator not running on first reactive set https://github.com/Textualize/textual/pull/1359
 - Ensure only printable characters are used as key_display https://github.com/Textualize/textual/pull/1361
-
 
 ## [0.6.0] - 2022-12-11
 
@@ -3365,6 +3351,7 @@ https://textual.textualize.io/blog/2022/11/08/version-040/#version-040
 
 - CSS support
 - Too numerous to mention
+
 ## [0.1.18] - 2022-04-30
 
 ### Changed

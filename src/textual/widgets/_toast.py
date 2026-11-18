@@ -184,7 +184,11 @@ class ToastRack(Container, inherit_css=False):
         # Look for any stale toasts and remove them.
         for toast in self.query(Toast):
             if toast._notification not in notifications:
-                toast.remove()
+                # Remove the holder too, as _expire() does, so clearing
+                # notifications does not leave empty containers behind.
+                (
+                    toast.parent if isinstance(toast.parent, ToastHolder) else toast
+                ).remove()
 
         # Gather up all the notifications that we don't have toasts for yet.
         new_toasts: list[Notification] = []
